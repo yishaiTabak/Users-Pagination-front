@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const URL_SERVER = "https://localhost:7106"
+const URL_SERVER = "http://localhost:5132"
 
 export const getAllUsersCount = async () =>{
     try{
@@ -24,6 +24,7 @@ export const getUsers = async (take, skip) =>{
 export const postRandomUsers = async (count) =>{
     try{
         const res = await axios.post(URL_SERVER + `/api/users/insert-random/${count}`)        
+        
         return res.data
     }catch(err){
         return []
