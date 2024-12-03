@@ -28,6 +28,7 @@ function App() {
     setIsLoading(true)
     await postRandomUsers(200)
     setReRenderCount(!reRenderCount)
+    setFilters({...filters})
     setIsLoading(false)
   }
 
