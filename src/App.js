@@ -18,8 +18,8 @@ function App() {
 
   const renderUsers = async () => {
     setIsLoading(true)
-    const take = (filters.pageNumber - 1) * filters.pageSize
-    const newUsers = await getUsers(filters.pageSize, take)
+    const skip = (filters.pageNumber - 1) * filters.pageSize
+    const newUsers = await getUsers(filters.pageSize, skip)
     setUsers(newUsers)
     setIsLoading(false)
   }
