@@ -1,6 +1,28 @@
 .App {
   background-color: rgb(247, 247, 247);
 }
+.ant-table-pagination {
+  position: sticky;
+  background-color: white;
+  bottom: 0;
+  padding: 20px 0;
+  margin: 0;
+  z-index: 1;
+}
+.smaller-rows .ant-table-pagination.ant-pagination{
+  margin: 0;
+  padding-right:10px ;
+}
+
+.smaller-rows .ant-table-tbody > tr > td {
+  padding: 13px; /* adjust this value as needed */
+}
+.container{
+  min-height: 100vh;
+  max-width: 950px;
+  margin: auto;
+  padding: 20px 20px 0;
+}
 .page-container{
   max-width: 740px;
   margin: auto;
@@ -9,7 +31,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 100vh;
+  /* height: 100vh; */
   gap: 10px;
   background-color: rgb(243, 243, 243);
 

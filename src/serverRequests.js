@@ -12,12 +12,14 @@ export const getAllUsersCount = async () =>{
     }
 }
 
-export const getUsers = async (take, skip) =>{
+export const getUsers = async (filters) =>{
     try{
-        const res = await axios.get(URL_SERVER + '/api/users/',{params:{take, skip}})        
+        const res = await axios.post(URL_SERVER + '/api/users/get-filtered-users',filters)        
+                
         return res.data
-    }catch(err){
-        return []
+    }catch(err){        
+        
+        return {}
     }
 }
 
@@ -25,6 +27,15 @@ export const postRandomUsers = async (count) =>{
     try{
         const res = await axios.post(URL_SERVER + `/api/users/insert-random/${count}`)        
         
+        return res.data
+    }catch(err){
+        return []
+    }
+}
+
+export const getEmailProviders = async (count) =>{
+    try{
+        const res = await axios.get(URL_SERVER + `/api/emailProviders/`)                
         return res.data
     }catch(err){
         return []
